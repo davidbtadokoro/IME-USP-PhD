@@ -1,0 +1,64 @@
+\section{Introduction}
+
+As a software solution, the Linux kernel is highly customizable and is on the
+cutting edge of diverse fields, including Internet infrastructure, embedded
+systems, cloud computing, and machine learning, making it critical for solving
+real-world problems of society at large. 
+
+When looking at the Linux kernel community from its data points, it is safe to
+conclude that this project is one of the most thriving Free/Libre Open-Source
+Software (FLOSS) projects by many metrics, such as the volume of volunteer
+developers worldwide or the number of companies that invest in the project. The
+Linux community has brought many people worldwide from different cultures,
+beliefs, time zones, and others together to improve the project.\looseness=-1
+
+Even though the project has been successful for over thirty years, it is still
+evolving from the software engineering perspective. For example, due to its
+size, the kernel requires developers to follow multiple processes and practices
+that compose many workflows, some of which have associated bottlenecks that slow
+down development; in this sense, newcomers need some time to get used to the
+basic workflows, but even more experienced developers forget some aspects of the
+development model and make mistakes. This is natural and, in some way, expected
+when considering the vastness of the Linux kernel.
+
+To mitigate workflow bottlenecks of large FLOSS projects, communities create
+tools to streamline and automate their tasks. In the case of Linux, tools like
+\texttt{get\_maintainers.pl}, \texttt{checkpatch.pl}, and
+\texttt{git-send-email} help in the tasks of finding the correct recipients to
+send contributions, checking for code style violations, and distributing patches
+(code changes) via email, respectively. It is worth noting that configuring
+these tools is often a complex and time-consuming chore by itself.
+
+The main point is that multiple tools maintained inside and outside the Linux
+project support the many kernel workflows. Beyond more consolidated and widely
+adopted tools, for instance, the ones maintained inside the project's codebase
+in the \texttt{scripts/} directory, it is commonplace for practitioners to
+develop \textit{ad-hoc} scripts highly coupled with their development contexts
+as solutions to gaps in the workflows not yet covered by existing tools or to
+configuration overheads. As the primary goal of Linux developers is not to
+develop and maintain supporting tools, these local solutions (although helpful)
+duplicate community efforts and pulverize their resources, which could be spent
+on fostering robust, high-quality collaborative tools.\looseness=-1
+
+In other words, although many solutions cover many parts of the kernel
+workflows, they are not unified, sometimes involve considerable effort to
+configure, and are often unknown outside specific development contexts. All
+Linux developers - contributors or maintainers, newcomers or veterans - would
+benefit from a project that robustly integrates these solutions and implements
+novel ones, presenting a hub-like interface that comprehensively abstracts the
+kernel workflows.\looseness=-1
+
+With all those ideas in mind, and considering that the described tools are
+invaluable to maintaining a large-scale project like the Linux kernel, to the
+point that they are crucial for its long-term
+sustainability~\cite{corbet-gregkh2017-linuxreport}, this paper presents a set
+of tools in a unified interface called \textit{Kworkflow} (kw), that streamlines
+and automates the many kernel workflows while enforcing the project rules.
+
+%%% TODO: SHOULD WE INCLUDE THE MICRO-DEVOPS DISCUSSION? %%%
+% With all those ideas in mind, this paper argues for the rise of a new set of
+% micro-DevOps tools that emerge from complex projects focused on ensuring that
+% the project is maintainable and scalable for all levels of developers. This work
+% was conducted over the years by creating an actual tool that intends to unify
+% the kernel workflow in a single tool, enforcing the project rules in a
+% low-effort way for experienced developers and newcomers.
